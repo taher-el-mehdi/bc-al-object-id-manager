@@ -1,0 +1,11 @@
+**/.vscode/**
+**/.vscode-test/**
+**/.git/**
+**/.github/**
+**/src/**
+**/node_modules/**
+**/.eslintrc*
+**/.prettierrc*
+**/tsconfig.json
+**/README.md
+!out/**

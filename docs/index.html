@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AL Object ID Manager — VS Code Extension</title>
+    <meta name="description" content="Manage AL object ID ranges for Microsoft Dynamics 365 Business Central, right inside VS Code." />
+    <meta property="og:title" content="AL Object ID Manager — VS Code Extension" />
+    <meta property="og:description" content="Manage AL object IDs and ranges in your Business Central projects with a simple, reliable VS Code extension." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-wrap">
+        <a class="brand" href="#">AL Object ID Manager</a>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#install">Install</a>
+          <a href="#usage">Usage</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-wrap">
+          <div class="hero-text">
+            <h1>Manage AL Object IDs with Confidence</h1>
+            <p class="lead">A lightweight VS Code extension to view, reserve, and fix AL object ID ranges for Business Central projects.</p>
+            <div class="cta">
+              <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=TAHERElMehdi.al-object-id-manager" target="_blank" rel="noopener">Install from VS Code Marketplace</a>
+              <a class="btn btn-secondary" href="#features">Explore Features</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <h2>Features</h2>
+          <div class="features-grid">
+            <div class="card">
+              <h3>ID Range Overview</h3>
+              <p>Quickly view configured ID ranges and usage across your AL project.</p>
+            </div>
+            <div class="card">
+              <h3>Detect Used IDs</h3>
+              <p>Scan the workspace to list used IDs per object type, preventing collisions.</p>
+            </div>
+            <div class="card">
+              <h3>Smart Fixes</h3>
+              <p>Apply safe fixes to misaligned IDs while respecting reserved ranges.</p>
+            </div>
+            <div class="card">
+              <h3>Project-Friendly</h3>
+              <p>Works with typical Business Central AL project structures and settings.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="install" class="section section-alt">
+        <div class="container">
+          <h2>Install</h2>
+          <ol class="steps">
+            <li>Open VS Code.</li>
+            <li>Go to Extensions and search for <strong>AL Object ID Manager</strong>.</li>
+            <li>Or click this button to install directly:</li>
+          </ol>
+          <p>
+            <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=TAHERElMehdi.al-object-id-manager" target="_blank" rel="noopener">Install from Marketplace</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="container">
+          <h2>Usage</h2>
+          <ul class="bullet-list">
+            <li>Open your Business Central AL project in VS Code.</li>
+            <li>Use the command palette to run <em>AL Object ID Manager: Scan Used IDs</em> or <em>Fix IDs</em>.</li>
+            <li>Configure ranges as needed in your project settings or extension configuration.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="faq" class="section section-alt">
+        <div class="container">
+          <h2>FAQ</h2>
+          <details>
+            <summary>Is this free?</summary>
+            <p>Yes, it’s free to install from the VS Code Marketplace.</p>
+          </details>
+          <details>
+            <summary>Which VS Code versions are supported?</summary>
+            <p>Recent stable versions of VS Code are supported. Keep VS Code updated for best results.</p>
+          </details>
+          <details>
+            <summary>Where can I report issues?</summary>
+            <p>Use your repository’s issues page to report bugs or request features.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> AL Object ID Manager</p>
+        <p>
+          <a href="https://marketplace.visualstudio.com/items?itemName=TAHERElMehdi.al-object-id-manager" target="_blank" rel="noopener">VS Code Marketplace</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Small enhancement: current year in the footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>

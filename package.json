@@ -1,0 +1,55 @@
+{
+  "name": "al-object-id-manager",
+  "displayName": "AL Object ID Manager",
+  "description": "Automatically manage and fix AL object IDs in Microsoft Dynamics 365 Business Central. Keeps objects within idRanges, resolves conflicts, and safely reassigns out-of-range IDs with preview and confirmation.",
+  "version": "2.0.0",
+  "publisher": "TAHERElMehdi",
+  "icon": "assets/logo.ico",
+  "homepage": "https://github.com/taher-el-mehdi/bc-al-object-id-manager",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taher-el-mehdi/bc-al-object-id-manager"
+  },
+  "bugs": {
+    "url": "https://github.com/taher-el-mehdi/bc-al-object-id-manager/issues"
+  },
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "keywords": [
+    "Business Central",
+    "Dynamics 365",
+    "AL",
+    "AL Language",
+    "Microsoft Dynamics",
+    "AL Objects",
+    "Business Central Development"
+  ],
+  "activationEvents": [
+    "onCommand:alObjectIdManager.fixIds"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "alObjectIdManager.fixIds",
+        "title": "AL: Fix Object IDs"
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "ms-dynamics-smb.al"
+  ],
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.84.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.6.3",
+    "vsce": "^2.15.0"
+  }
+}
