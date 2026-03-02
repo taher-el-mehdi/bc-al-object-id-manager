@@ -127,36 +127,36 @@ export function registerFixCommand(
     }
 
     /**
-     * Preview dialog
+     * Preview and select changes
      */
-    const preview = allChanges
-      .slice(0, 20)
-      .map(c =>
-        `${vscode.workspace.asRelativePath(c.obj.uri)}: ` +
-        `${c.obj.type} ${c.obj.id} → ${c.newId}`
-      )
-      .join('\n');
+    type ChangePickItem = vscode.QuickPickItem & { change: Change };
+    const items: ChangePickItem[] = allChanges.map(change => ({
+      label: vscode.workspace.asRelativePath(change.obj.uri),
+      description: `Preview update (${change.obj.type})`,
+      detail: `${change.obj.id} → ${change.newId}`,
+      picked: true,
+      change
+    }));
 
-    const choice = await vscode.window.showWarningMessage(
-      `About to reassign ${allChanges.length} object(s):\n\n` +
-      summaryByType.join('\n') +
-      `\n\nPreview:\n${preview}` +
-      (allChanges.length > 20 ? '\n\n...more changes not shown' : ''),
-      { modal: true },
-      'Apply Changes',
-      'Cancel'
-    );
+    const selected = await vscode.window.showQuickPick(items, {
+      canPickMany: true,
+      matchOnDescription: true,
+      matchOnDetail: true,
+      placeHolder: 'Select the fixes to apply'
+    });
 
-    if (choice !== 'Apply Changes') {
+    if (!selected || selected.length === 0) {
       vscode.window.showInformationMessage('ID fix cancelled.');
       return;
     }
+
+    const selectedChanges = selected.map(item => item.change);
 
     /**
      * Apply changes
      */
     const edit = new vscode.WorkspaceEdit();
-    for (const c of allChanges) {
+    for (const c of selectedChanges) {
       edit.replace(c.obj.uri, c.obj.idRange, String(c.newId));
     }
 
@@ -171,7 +171,7 @@ export function registerFixCommand(
     await vscode.workspace.saveAll();
 
     vscode.window.showInformationMessage(
-      `AL Object ID Manager: ${allChanges.length} object ID(s) fixed successfully.`
+      `AL Object ID Manager: ${selectedChanges.length} object ID(s) fixed successfully.`
     );
 
   });
