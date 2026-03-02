@@ -2,7 +2,7 @@
   "name": "al-object-id-manager",
   "displayName": "AL Object ID Manager",
   "description": "Automatically manage and fix AL object IDs in Microsoft Dynamics 365 Business Central. Keeps objects within idRanges, resolves conflicts, and safely reassigns out-of-range IDs with preview and confirmation.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "publisher": "TAHERElMehdi",
   "icon": "assets/logo.ico",
   "homepage": "https://github.com/taher-el-mehdi/bc-al-object-id-manager",
@@ -33,7 +33,7 @@
     "commands": [
       {
         "command": "alObjectIdManager.fixIds",
-        "title": "AL: Fix Object IDs"
+        "title": "EMT: Fix Object IDs"
       }
     ]
   },
