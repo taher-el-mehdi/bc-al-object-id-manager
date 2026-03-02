@@ -4,7 +4,7 @@ This extension provides a feature focused on keeping AL object IDs within your `
 
 ## Fix AL Objects Id
 
-- Run from the Command Palette: **`AL: Fix Object IDs`**
+- Run from the Command Palette: **`EMT: Fix Object IDs`**
 - Behavior:
   - Reassigns out-of-range objects per object type from the lowest available ID in your ranges
   - Never exceeds your range limits
